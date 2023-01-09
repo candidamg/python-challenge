@@ -85,7 +85,7 @@ print(f"\nGreatest Increase in Profits: {increase_date} (${(increase_profit)})")
 print(f"\nGreatest Decrease in Profits: {decrease_date} (${(decrease_profit)})\n")
 
 #creating a text file in write mode
-with open('C:/Users/sarai/Desktop/UTA Boot camp/Challenge 3/PyBank/Resources/new.txt', 'w') as f:
+with open("..", "analysis", "new.txt", 'w') as f:
         
     #---------------------------------------------------
     #EXPORTING THE RESULTS IN A NEW TEXT FILE 
