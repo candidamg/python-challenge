@@ -3,7 +3,7 @@ import os #module to create file path across operating systems
 import csv #module for reading and writing files
 
 #path to the csv file
-csvpath = os.path.join("Resources", "budget_data.csv")
+csvpath = os.path.join('PyBank/Resources/budget_data.csv')
 
 #creating the variables
 months_count = 0
@@ -84,7 +84,8 @@ print(f"\nGreatest Increase in Profits: {increase_date} (${(increase_profit)})")
 #printing the greatest decrease in profits (date and amount) over the entire period
 print(f"\nGreatest Decrease in Profits: {decrease_date} (${(decrease_profit)})\n")
 
-new_file = os.path.join('analysis', 'new.txt')
+#assigning the path to a variable
+new_file = os.path.join('PyBank/analysis/new.txt')
 
 #creating a text file in write mode
 with open(new_file, 'w') as f:
