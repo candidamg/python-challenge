@@ -3,7 +3,7 @@ import os #module to create file path across operating systems
 import csv #module for reading and writing files
 
 #path to the csv file
-csvpath = os.path.join('Resources', 'budget_data.csv')
+csvpath = os.path.join("Resources", "budget_data.csv")
 
 #creating the variables
 months_count = 0
