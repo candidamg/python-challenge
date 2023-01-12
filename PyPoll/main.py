@@ -3,17 +3,13 @@
 import os #module to create file path across operating systems
 import csv #module for reading and writing files
 
-
 #creating path to the csv file
 csvpath = os.path.join("PyPoll", "Resources", "election_data.csv")
 
 #variables
 num_votes = 0
 votes = {}
-candidates = {}
-percentage = 0
 perc_votes = {}
-counter =0
 final_votes = 0
 
 #assigning the path as a file
@@ -56,7 +52,11 @@ with open(csvpath) as csvfile:
             #retrieving the name of the winner of the eletion
             if voting > final_votes:
                 final_votes = voting
-                winner_of_election = i
+                winner_of_election = i #got final winner
+
+#---------------------------------------------------
+#PRINTING THE RESULTS
+#--------------------------------------------------- 
 
 print("\n\nElection Results")
 print("-------------------------")
@@ -69,3 +69,24 @@ print("-------------------------")
 #winner of the election based on popular vote
 print(f"Winner: {winner_of_election}")
 print("-------------------------\n") 
+
+
+#assigning the path to a variable
+new_file = os.path.join('PyPoll/analysis/pypoll_summary.txt')
+
+#creating a text file in write mode
+with open(new_file, 'w') as f:
+        
+    #---------------------------------------------------
+    #EXPORTING THE RESULTS IN A NEW TEXT FILE 
+    #--------------------------------------------------- 
+    
+    f.write("\n\nElection Results\n")
+    f.write("-------------------------\n")
+    f.write(f"Total Votes: {num_votes}\n")
+    f.write("-------------------------\n")
+    for each_candidate_data, i in votes.items():
+        f.write(f'{each_candidate_data}: {perc_votes[each_candidate_data]}% ({votes[each_candidate_data]})\n')
+    f.write("-------------------------\n") 
+    f.write(f"Winner: {winner_of_election}\n")
+    f.write("-------------------------\n") 

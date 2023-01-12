@@ -86,7 +86,7 @@ print(f"\nGreatest Increase in Profits: {increase_date} (${(increase_profit)})")
 print(f"\nGreatest Decrease in Profits: {decrease_date} (${(decrease_profit)})\n")
 
 #assigning the path to a variable
-new_file = os.path.join('PyBank/analysis/new.txt')
+new_file = os.path.join('PyBank/analysis/pybank_summary.txt')
 
 #creating a text file in write mode
 with open(new_file, 'w') as f:
@@ -97,13 +97,8 @@ with open(new_file, 'w') as f:
     
     f.write("\nFinancial Analysis")
     f.write("\n----------------------------")
-    #writing the total number of months included in the dataset
     f.write(f"\nTotal Months: {months_count}")
-    #writing the net total amount of "Profit/Losses" over the entire period
-    f.write(f"\nTotal: ${nettotal}")
-    #writing the average 
+    f.write(f"\nTotal: ${nettotal}") 
     f.write(f"\nAverage Change: ${ave_ch}")
-    #writing the greatest increase in profits (date and amount) over the entire period
     f.write(f"\nGreatest Increase in Profits: {increase_date} (${(increase_profit)})")
-    #writing the greatest decrease in profits (date and amount) over the entire period
     f.write(f"\nGreatest Decrease in Profits: {decrease_date} (${(decrease_profit)})\n")
